@@ -13,6 +13,9 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define AS(keycode) &as LS(keycode) keycode
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
 
 / {
     behaviors {
@@ -43,11 +46,11 @@
 	AS(TAB) AS(Q) AS(W) AS(E) AS(R) AS(T) AS(Y) AS(U) AS(I) AS(O) AS(P) AS(LBKT)  AS(RBKT) AS(BSLH)
 	&kp CLCK  AS(A) AS(S) AS(D) AS(F) AS(G) AS(H) AS(J) AS(K) AS(L) AS(SEMI) AS(SQT)           &kp RET
 	&kp LSHFT   AS(Z) AS(X) AS(C) AS(V) AS(B) AS(N) AS(M) AS(COMMA) AS(DOT) AS(FSLH)           &kp RSHFT
-	&kp LCTRL &kp LGUI &kp LALT             &kp SPACE                     &kp RALT  &mo 2  &mo 1   &kp RCTRL
+	&kp LCTRL &kp LGUI &kp LALT             &kp SPACE                     &kp RALT  &mo RAISE  &mo LOWER   &kp RCTRL
 			>;
 		};
 
-		rgb_layer {
+		lower_layer {
 // ------------------------------------------------------------------------------------------------
 // | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10  | F11 | F12 | EFFECT REV |
 // |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    |     |     |           |
@@ -64,20 +67,13 @@
 			>;
 		};
 
-		aux_layer {
-// ------------------------------------------------------------------------------------------------
-// | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10  | F11 | F12 | EFFECT REV |
-// |  BT 1   |   |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |    |     |     |           |
-// |  VOL UP  | LT |  DN  | RT | HUEDN | SATDN | BRIDN | SPDDN |   |     |   |     |  EFFECT FORW |
-// |   VOL DN    |  TILDE   |      |      |     |     |     |     |     |     |     |                  |
-// |   MUTE  | PGUP | PGDN |             TOG RGB                | PRT SCR |       |       |  DEL  |
-// ------------------------------------------------------------------------------------------------
+		raise_layer {
 			bindings = <
-	&bt C_MUTE   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &rgb_ug RGB_EFR
-	&bt C_PLAY_PAUSE  &trans    &kp C_VOLUME_UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &trans   &trans  &trans          &trans 
-	&bt C_VOL_UP   &kp C_PREVIOUS  &kp C_VOL_DN  &kp C_NEXT &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans   &trans   &trans   &trans        &rgb_ug RGB_EFF
-	&bt C_VOL_DN   &kp TILDE    &trans    &trans   &trans          &trans          &trans          &trans          &trans   &trans   &trans                          &trans
-	&bt C_MUTE   &kp PGUP   &kp PGDN                            &rgb_ug RGB_TOG                                      &kp PSCRN      &trans      &trans               &kp DEL
+	&kp C_MUTE   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &rgb_ug RGB_EFR
+	&kp C_PLAY_PAUSE  &trans    &kp C_VOLUME_UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &trans   &trans  &trans          &trans 
+	&kp C_VOL_UP   &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans   &trans   &trans   &trans        &rgb_ug RGB_EFF
+	&kp C_VOL_DN   &kp TILDE    &trans    &trans   &trans          &trans          &trans          &trans          &trans   &trans   &trans                          &trans
+	&kp C_MUTE   &kp PGUP   &kp PGDN                            &rgb_ug RGB_TOG                                      &kp PSCRN      &trans      &trans               &kp DEL
 			>;
 		};
 	};
