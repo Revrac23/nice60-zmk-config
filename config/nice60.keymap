@@ -39,7 +39,7 @@
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   "|"   |
 // | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |
 // |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |      SHIFT       |
-// |  CTL  |  WIN  |  ALT  |            SPACE              |  ALT  |  MO2  |  MO(1) |  CTL  |
+// |  CTL  |  CMD  |  ALT  |            SPACE              |  ALT  |  MO2  |  MO(1) |  CTL  |
 // ------------------------------------------------------------------------------------------
 			bindings = <
 	&gresc AS(N1) AS(N2) AS(N3) AS(N4) AS(N5) AS(N6) AS(N7) AS(N8) AS(N9) AS(N0) AS(MINUS) AS(EQUAL) AS(BSPC)
@@ -73,14 +73,14 @@
 // | PLAY |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   "|"   |
 // | VOL UP  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |
 // | VOL DN  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |      SHIFT       |
-// | TILDE  |  WIN  |  ALT  |            SPACE              |  ALT  |  MO2  |  MO(1) |  CTL  |
+// | TILDE  |  PGUP  |  ALT  |            SPACE              |  ALT  |  MO2  |  MO(1) |  CTL  |
 // ------------------------------------------------------------------------------------------
 			bindings = <
-	&kp C_MUTE   &kp F1    &kp F2    &kp F3  &kp F4           &kp F5          &kp F6          &kp F7          &kp F8   &kp F9   &kp F10  &kp F11 &kp F12  &rgb_ug RGB_EFR
-	&kp C_PLAY_PAUSE  &trans    &kp C_VOLUME_UP    &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_SPI  &trans   &trans   &trans   &trans  &trans          &trans 
-	&kp C_VOL_UP   &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_SPD &trans   &trans   &trans   &trans        &rgb_ug RGB_EFF
-	&kp C_VOL_DN   &kp TILDE    &trans    &trans   &trans          &trans          &trans          &trans          &trans   &trans   &trans                          &trans
-	&kp TILDE   &kp PGUP   &kp PGDN                            &rgb_ug RGB_TOG                                      &kp PSCRN      &trans      &trans               &kp DEL
+	&kp C_MUTE    &trans    &trans    &trans  &trans     &trans      &trans   &trans     &trans &trans  &trans  &trans &trans &trans 
+	&kp C_PLAY_PAUSE  &trans    &kp C_VOLUME_UP    &trans &trans &trans &trans &trans  &trans   &trans   &trans   &trans  &trans          &trans 
+	&kp C_VOL_UP   &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT &trans  &trans  &trans  &trans &trans   &trans   &trans   &trans  &trans 
+	&kp C_VOL_DN   &kp TILDE    &trans    &trans   &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans
+	&kp TILDE   &kp PGUP   &kp PGDN    &rgb_ug RGB_TOG   &trans   &trans  &trans  &kp DEL
 			>;
 		};
 	};
